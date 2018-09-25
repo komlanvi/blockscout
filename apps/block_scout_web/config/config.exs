@@ -10,7 +10,15 @@ config :block_scout_web,
   namespace: BlockScoutWeb,
   ecto_repos: [Explorer.Repo]
 
-config :block_scout_web, BlockScoutWeb.Chain, logo: "/images/poa_logo.svg"
+config :block_scout_web, BlockScoutWeb.Chain, logo: System.get_env("LOGO") || "/images/poa_logo.svg"
+
+config :block_scout_web, BlockScoutWeb.Chain, network: System.get_env("NETWORK") || "POA Network"
+
+config :block_scout_web, BlockScoutWeb.Chain, subnetwork: System.get_env("SUBNETWORK") || "Sokol Testnet"
+
+config :block_scout_web, BlockScoutWeb.Chain, network_icon: System.get_env("NETWORK_ICON") || "_network_icon.html"
+
+config :block_scout_web, BlockScoutWeb.Chain, network_navigation: System.get_env("NETWORK_NAVIGATION") || %{"POA Core" => "https://blockscout.com/poa/core", "POA Sokol" => "https://blockscout.com/poa/sokol"}
 
 # Configures the endpoint
 config :block_scout_web, BlockScoutWeb.Endpoint,
