@@ -17,11 +17,6 @@ config :block_scout_web, BlockScoutWeb.Chain, network: System.get_env("NETWORK")
 config :block_scout_web, BlockScoutWeb.Chain, subnetwork: System.get_env("SUBNETWORK") || "Sokol Testnet"
 
 config :block_scout_web, BlockScoutWeb.Chain, network_icon: System.get_env("NETWORK_ICON") || "_network_icon.html"
-<<<<<<< HEAD
-=======
-
-config :block_scout_web, BlockScoutWeb.Chain, network_navigation: System.get_env("NETWORK_NAVIGATION") || %{"POA Core" => "https://blockscout.com/poa/core", "POA Sokol" => "https://blockscout.com/poa/sokol"}
->>>>>>> ff676ebfed42fa1537269d99a4696d9b27ae2e1e
 
 # Configures the endpoint
 config :block_scout_web, BlockScoutWeb.Endpoint,
