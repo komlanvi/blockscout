@@ -17,10 +17,11 @@ config :block_scout_web, BlockScoutWeb.Endpoint,
   cache_static_manifest: "priv/static/cache_manifest.json",
   force_ssl: false,
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
-  check_origin: ["//*.blockscout.com", "//*.elb.amazonaws.com"],
+  check_origin: System.get_env("CHECK_ORIGIN") || false,
   http: [port: System.get_env("PORT")],
   url: [
     scheme: "http",
+    path: "/#{System.get_env("network_path")}/#{System.get_env("subnetwork_path")}",
     port: System.get_env("PORT")
   ]
 
