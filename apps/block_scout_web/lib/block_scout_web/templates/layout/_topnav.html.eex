@@ -65,13 +65,10 @@
             </span> -->
             <%= Application.get_env(:block_scout_web, BlockScoutWeb.Chain)[:subnetwork] %>
           </a>
-          <%= if Enum.count(Application.get_env(:block_scout_web, BlockScoutWeb.Chain)[:network_navigation]) > 0 do %>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= for {subnet, sublink} <- Application.get_env(:block_scout_web, BlockScoutWeb.Chain)[:network_navigation] do %>
-                <a class="dropdown-item" href="<%= sublink %>"><%= subnet %></a>
-              <% end %>
-            </div>
-          <% end %>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="https://sokol.blockscout.com/"><%= gettext("POA Sokol") %></a>
+            <a class="dropdown-item" href="https://poa.blockscout.com/"><%= gettext("POA Core") %></a>
+          </div>
         </li>
       </ul>
     </div>
